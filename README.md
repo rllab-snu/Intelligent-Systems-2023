@@ -36,10 +36,10 @@ $ roslaunch sim2real base_p1.launch
 Open another terminal, then execute the below command.
 
 ```
-$ rosrun sim2real eval_agent.py
+$ rosrun sim2real {TEAM_NAME}_project1.py
 ```
 
-Finally, you open one more terminal, and publish topic manually. Below is an example for running your code in track 1.
+Finally, you open one more terminal, and publish topic manually.
 
 ```
 $ rostopic pub /query sim2real/Query "{id: '0', trial: 0, name: '{TEAM_NAME}', world: 'track_1', exit: false}"
