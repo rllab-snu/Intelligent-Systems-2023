@@ -1,0 +1,9 @@
+string id
+int32 trial
+string team
+string world
+float32 elapsed_time
+int32 waypoints
+int32 n_waypoints
+bool success
+string fail_type
