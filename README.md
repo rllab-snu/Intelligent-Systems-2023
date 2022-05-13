@@ -13,11 +13,11 @@ If you don't remove preproject folders, you would have some conflicts. Also, we 
 ```
 $ cd {DIR_sim2real}/project
 $ git clone {YOUR_TEAM_REPOSITORY}
-$ cd {TEAM_NAME} && mkdir project
-$ cp ../RLLAB/project/RLLAB_project1.py {TEAM_NAME}_project1.py
+$ cd IS_{TEAM_NAME} && mkdir project
+$ cp ../RLLAB/project/RLLAB_project1.py project/{TEAM_NAME}_project1.py
 ```
 
-Copy the skeleton code to your repository and implement TODO parts.
+Copy the skeleton code to your repository and implement TODO parts. {YOUR_TEAM_REPOSITORY} should be named IS_{TEAM_NAME}.
 
 ```
 $ cd {DIR_sim2real}
