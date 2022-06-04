@@ -1,6 +1,8 @@
 #!/usr/bin/env python2
 from __future__ import print_function
 
+# Change python2 to python3 above if you want to use PyTorch!
+
 
 ##### add python path #####
 import sys
@@ -30,7 +32,7 @@ from joblib import dump, load
 
 
 project_path = rospkg.RosPack().get_path("sim2real")
-yaml_file = project_path + "/config/eval1.yaml"
+yaml_file = project_path + "/config/eval3.yaml"
 
 ######################################## PLEASE CHANGE TEAM NAME ########################################
 TEAM_NAME = "RLLAB"
@@ -47,7 +49,7 @@ class GaussianProcess:
         self.env.load(args['world_name'])
         self.track_list = self.env.track_list
         
-        self.time_limit = 100.0
+        self.time_limit = 150.0
         
         """
         add your demonstration files with expert state-action pairs.
@@ -103,7 +105,7 @@ class GaussianProcess:
 
     def callback_query(self, data):
         rt = Result()
-        START_TIME = time.time()
+        START_TIME = rospy.get_time()
         is_exit = data.exit
         try:
             # if query is valid, start
@@ -111,7 +113,7 @@ class GaussianProcess:
                 return
             
             if data.world not in self.track_list:
-                END_TIME = time.time()
+                END_TIME = rospy.get_time()
                 rt.id = data.id
                 rt.trial = data.trial
                 rt.team = data.name
@@ -130,8 +132,8 @@ class GaussianProcess:
             
             
             while True:
-                if time.time() - START_TIME > self.time_limit:
-                    END_TIME = time.time()
+                if rospy.get_time() - START_TIME > self.time_limit:
+                    END_TIME = rospy.get_time()
                     rt.id = data.id
                     rt.trial = data.trial
                     rt.team = data.name
@@ -152,7 +154,7 @@ class GaussianProcess:
                 obs = np.reshape(obs, [1,-1])
                 
                 if done:
-                    END_TIME = time.time()
+                    END_TIME = rospy.get_time()
                     rt.id = data.id
                     rt.trial = data.trial
                     rt.team = data.name
@@ -173,7 +175,7 @@ class GaussianProcess:
         
         except Exception as e:
             print(e)
-            END_TIME = time.time()
+            END_TIME = rospy.get_time()
             rt.id = data.id
             rt.trial = data.trial
             rt.team = data.name

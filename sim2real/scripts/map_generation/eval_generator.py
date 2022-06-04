@@ -70,12 +70,12 @@ def get_wall(wall_name, X, Y):
             """ %(wall_name, wall_name, l, wall_name, l, C[0], C[1], yaw)
 
 def export_world_file(save_path):
-  world_list = [1, 2] # Change this for your own custom worlds!
+  world_list = [1, 2, 3] # Change this for your own custom worlds!
   A = []
   B = []
   N_total = 0
 
-  offset = [[0,0], [10, 10]] # Change this for your own worlds! You also need to write this information to sim2real/worlds/eval3.json
+  offset = [[-5, -15], [0, 0], [0, -30]] # Change this for your own worlds! You also need to write this information to sim2real/worlds/eval3.json
   for world in world_list:
     world_file_name = str(world)
     scaled_wall_path = rospkg.RosPack().get_path("sim2real") + "/worlds/world_map_scaled/track_" + world_file_name + "_scaled.txt" # OUTPUT SCALED WORLD MAP DATA 

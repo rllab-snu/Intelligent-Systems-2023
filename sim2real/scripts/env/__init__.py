@@ -1,5 +1,5 @@
 from gym.envs.registration import register
-from rccar_env import Env
+from .rccar_env import Env
 
 register(
     id='RCCar-v0',
