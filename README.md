@@ -83,7 +83,7 @@ $ rostopic pub /query sim2real/Query "{id: '0', trial: 0, name: '{TEAM_NAME}', w
 
 For basic map building instructions, please refer to the map building tutorial uploaded on ETL.
 
-If you wish to create your own project 3 world, you can make it by typing the following command.
+If you wish to create your own project 3 world with your created maps, you can make it by typing the following command.
 
 ```
 $ roscd sim2real/scripts
