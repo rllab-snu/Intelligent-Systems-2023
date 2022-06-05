@@ -60,6 +60,33 @@ Finally, you open one more terminal, and publish topic manually.
 
 ```
 $ rostopic pub /query sim2real/Query "{id: '0', trial: 0, name: '{TEAM_NAME}', world: 'track_1', exit: false}"
+
+## Evaluation your code (Project3)
+```
+$ roslaunch sim2real base_p3.launch
+```
+
+Open another terminal, then execute the below command.
+
+```
+$ rosrun sim2real {TEAM_NAME}_project3.py
+```
+
+Finally, you open one more terminal, and publish topic manually.
+
+```
+$ rostopic pub /query sim2real/Query "{id: '0', trial: 0, name: '{TEAM_NAME}', world: 'track_1', exit: false}"
+```
+
+## Map Building for Project 3
+
+For basic map building instructions, please refer to the map building tutorial uploaded on ETL.
+
+If you with to create your own project 3 world, you can make it by typing the following command.
+
+```
+$ roscd sim2real/scripts
+$ python eval_generator.py
 ```
 
 If you have any questions, please contact to TAs or use repository issue.
