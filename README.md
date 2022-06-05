@@ -60,8 +60,9 @@ Finally, you open one more terminal, and publish topic manually.
 
 ```
 $ rostopic pub /query sim2real/Query "{id: '0', trial: 0, name: '{TEAM_NAME}', world: 'track_1', exit: false}"
-
+```
 ## Evaluation your code (Project3)
+
 ```
 $ roslaunch sim2real base_p3.launch
 ```
