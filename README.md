@@ -2,13 +2,15 @@
 
 ## Start Intelligent Systems Project
 
+If you don't remove preproject folders, you would have some conflicts. Also, we recommend delete /devel and /build folders before compiling catkin workspace.
+
 ```
 $ cd ~/catkin_ws/src
 $ git clone https://github.com/rllab-snu/Intelligent-Systems-2023.git
 $ cd ~/catkin_ws && catkin_make
 ```
 
-If you don't remove preproject folders, you would have some conflicts. Also, we recommend delete /devel and /build folders before compiling catkin workspace.
+Copy the skeleton code to your repository and implement TODO parts. {YOUR_TEAM_REPOSITORY} should be named IS_{TEAM_NAME}.
 
 ```
 $ cd {DIR_sim2real}/project
@@ -17,16 +19,13 @@ $ cd IS_{TEAM_NAME} && mkdir project
 $ cp ../RLLAB/project/RLLAB_project1.py project/{TEAM_NAME}_project1.py
 ```
 
-Copy the skeleton code to your repository and implement TODO parts. {YOUR_TEAM_REPOSITORY} should be named IS_{TEAM_NAME}.
+Please change TEAM_NAME in CMakeLists.txt and recompile the packages.
 
 ```
 $ cd {DIR_sim2real}
 $ vi CMakeLists.txt  # then change the value of TEAM_NAME
 $ cd ~/catkin_ws && catkin_make
 ```
-
-Please change TEAM_NAME in CMakeLists.txt and recompile the packages.
-
 
 ## Evaluation your code (Project1)
 ```
