@@ -4,7 +4,7 @@
 
 ```
 $ cd ~/catkin_ws/src
-$ git clone https://github.com/rllab-snu/Intelligent-Systems-2022.git
+$ git clone https://github.com/rllab-snu/Intelligent-Systems-2023.git
 $ cd ~/catkin_ws && catkin_make
 ```
 
