@@ -112,7 +112,7 @@ class App(QWidget):
         print("a : select previous mode")
         print("s : save")
         print("c : don't save and exit")
-	print("space: escape from current loop")
+        print("space: escape from current loop")
 
         print("------------------------------------")
 
