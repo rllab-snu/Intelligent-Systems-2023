@@ -13,8 +13,9 @@ track images should be placed in track_img folder.
 track_\*.txt, track_\*\_waypoints.txt and track_\*.world  
 all three files will be generated in sim2real/worlds/ directory.
 
-## How to generate map and waypoints using GUI
+## How to generate map using GUI
+0) Click point so it can be the initial starting point of rc car.
 1) Click points so they can follow the outer loop of race track. After you click the last point, press Space to end the loop.
 2) Click points so they can follow the inner loop of race track. After you click the last point, press Space to end the loop.
-3) Click points for the waypoints of race track. After you click the last point, press s to end.
+
 

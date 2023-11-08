@@ -43,13 +43,13 @@ parser.add_argument(
 parser.add_argument(
     "--width_ratio",
     type = float,
-    default = 1.0,
+    default = 0.3,
     help = "image width resize rate"
 )
 parser.add_argument(
     "--height_ratio",
     type = float,
-    default = 1.0,
+    default = 0.3,
     help = "image height resize rate"
 )
 parser.add_argument(
@@ -71,7 +71,7 @@ class App(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.title = 'plot track and collect waypoints'
+        self.title = 'plot track'
         self.left = 10
         self.top = 10
         self.width = 640
@@ -90,7 +90,7 @@ class App(QWidget):
         self.height_resize = args.height_ratio
         self.map_width = args.map_width
         self.map_height = args.map_height
-        self.track_name = 'track_{}.png'.format(self.track_id)
+        self.track_name = 'track_base.jpg'#.format(self.track_id)
         self.initUI(self.track_name)
         self.inner_course = []
         self.outer_course = []
@@ -110,9 +110,9 @@ class App(QWidget):
         print("r : reset")
         print("d : select next mode")
         print("a : select previous mode")
-        print("space : finish loop")
         print("s : save")
         print("c : don't save and exit")
+	print("space: escape from current loop")
 
         print("------------------------------------")
 
@@ -179,9 +179,8 @@ class App(QWidget):
                      point[2:] -= diff_vector
 
         if self.mode == 1:
-
             if self.outer_loop == 1:
-                 print("Outer loop finished, please undo points to revise")
+                 print("Outer loop finished, please undo points to revise with right click")
                  return
             if self.last_outer is None:
                     self.last_outer = np.array([(e.x() - self.zero[0])* self.map_width / self.width, (e.y() - self.zero[1]) * self.map_height / self.height])
@@ -196,7 +195,7 @@ class App(QWidget):
 
         if self.mode == 2:
             if self.inner_loop == 1:
-                 print("Inner loop finished, please undo points to revise")
+                 print("Inner loop finished, please undo points to revise with right click")
                  return
             if self.last_inner is None:
                     self.last_inner = np.array([(e.x() - self.zero[0])* self.map_width / self.width, (e.y() - self.zero[1]) * self.map_height / self.height])

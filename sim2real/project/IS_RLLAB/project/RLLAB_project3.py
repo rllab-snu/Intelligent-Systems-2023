@@ -59,7 +59,7 @@ class GaussianProcess:
         #DON'T CHANGE THIS PART!
         # 1.5 <= minVel <= maxVel <= 3.0
         self.maxAng = 1.5
-        self.minVel = 1.5
+        self.minVel = 0.5
         self.maxVel = 3.0
         ########################
         
